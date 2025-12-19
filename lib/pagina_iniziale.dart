@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_personal_app/pagina_calendario.dart';
 
 class PaginaIniziale extends StatelessWidget {
   const PaginaIniziale({super.key});
@@ -79,7 +80,36 @@ class PaginaIniziale extends StatelessWidget {
               ],
             ),
             child: TextButton(
-              onPressed: () {},
+              // Quando premi il bottone, vuoi APRIRE una nuova pagina.
+              // In Flutter, cambiare pagina si chiama "NAVIGAZIONE" (navigation).
+
+              // Navigator è lo strumento che Flutter usa per:
+              // - aprire nuove pagine (push)
+              // - tornare indietro (pop)
+              // - sostituire pagine (pushReplacement)
+              // - gestire lo stack delle schermate (come una pila di carte)
+
+              // Ogni volta che apri una nuova pagina, Flutter la METTE sopra la precedente.
+              // Quando torni indietro, Flutter la TOGLIE dallo stack.
+
+              // Navigator.push() = aggiunge una nuova pagina sopra quella attuale.
+              onPressed: () {
+                Navigator.push(
+                  context, // Il "context" dice a Flutter DOVE sei nella tua app.
+                  // Serve per sapere da quale pagina stai navigando.
+
+                  // MaterialPageRoute è la STRADA (route) che porta alla nuova pagina.
+                  // Dice a Flutter:
+                  // - come animare il passaggio
+                  // - quale widget deve essere mostrato come nuova pagina
+                  MaterialPageRoute(
+                    builder: (context) => const PaginaCalendario(),
+                    // builder: costruisce la NUOVA pagina da mostrare.
+                    // Qui stai dicendo: "Quando arrivi su questa route, mostra PaginaCalendario".
+                  ),
+                );
+              },
+
               child: Text(
                 'Apri il Calendario',
                 style: GoogleFonts.cormorantGaramond(
