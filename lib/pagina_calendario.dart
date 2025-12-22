@@ -184,7 +184,7 @@ class _PaginaCalendarioState extends State<PaginaCalendario> {
               ),
             ),
 
-            // ✅ CARD DEL GIORNO SELEZIONATO
+            //CARD DEL GIORNO SELEZIONATO
             if (selectedDay != null)
               Expanded(
                 flex: 3,

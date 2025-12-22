@@ -118,8 +118,10 @@ class DayCard extends StatelessWidget {
                       radius:
                           1.9, //quanto si espande(0.0 = piccolo, 1.o = pieno)
                     ),
+                    // Serve per arrotondare il gradiente come il bottone
                     borderRadius: BorderRadius.circular(25),
                   ),
+                  // Serve per dare spazio interno al bottone
                   padding: const EdgeInsets.symmetric(
                     horizontal: 5,
                     vertical: 2,
@@ -127,6 +129,7 @@ class DayCard extends StatelessWidget {
 
                   child: ElevatedButton(
                     onPressed: onClose,
+                    //Rende il bottone trasparente così si vede il gradiente sotto
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.transparent,
                       shadowColor: Colors.transparent,
